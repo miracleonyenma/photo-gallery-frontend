@@ -1,3 +1,160 @@
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,1,300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+  font-family: 'Clash Display', sans-serif;
+}
+
+body {
+  @apply bg-slate-50;
+}
+
+/* SITE LOGO */
+.site-logo h3 {
+  @apply text-lg font-black;
+}
+
+/* SITE NAV */
+
+.site-nav .links {
+  @apply flex gap-4;
+}
+
+.links .link {
+  @apply underline;
+}
+
+/* SITE HEADER */
+
+.site-header {
+  @apply sticky top-0 w-full p-4 z-10;
+}
+
+.site-header .wrapper {
+  @apply flex justify-between gap-6 p-4 px-6 bg-white max-w-6xl m-auto rounded-full shadow;
+}
+
+/* SITE MAIN */
+
+.site-main {
+  @apply w-full p-4;
+}
+
+.site-main > .wrapper {
+  @apply max-w-7xl m-auto;
+}
+
+/* // PAGES // */
+/* INDEX */
+/* .photos-page {
+    
+  } */
+
+.gallery-section header {
+  @apply mb-4 max-w-6xl m-auto;
+}
+
+.gallery {
+  /* @apply md:grid gap-4; */
+  /* grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr)); */
+  column-count: 1;
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+.gallery-item {
+  @apply transition-all inline-block bg-white p-2 mb-4 rounded-xl hover:shadow-xl hover:-translate-y-2 cursor-pointer;
+}
+
+.gallery-item .img-cont {
+  @apply relative transform transition rounded-lg overflow-hidden;
+}
+
+.gallery-item .backdrop {
+  @apply absolute bottom-0 left-0 w-full h-full transition opacity-0;
+  /* background: linear-gradient(
+    180deg,
+    #00000057 0,
+    rgba(0, 0, 0, 0.338) 3.5%,
+    rgba(0, 0, 0, 0.324) 7%,
+    rgba(0, 0, 0, 0.306) 10.35%,
+    rgba(0, 0, 0, 0.285) 13.85%,
+    rgba(0, 0, 0, 0.262) 17.35%,
+    rgba(0, 0, 0, 0.237) 20.85%,
+    rgba(0, 0, 0, 0.213) 24.35%,
+    rgba(0, 0, 0, 0.188) 27.85%,
+    rgba(0, 0, 0, 0.165) 31.35%,
+    rgba(0, 0, 0, 0.144) 34.85%,
+    rgba(0, 0, 0, 0.126) 38.35%,
+    rgba(0, 0, 0, 0.112) 41.85%,
+    rgba(0, 0, 0, 0.103) 45.35%,
+    #0000001a 48.85%,
+    rgba(0, 0, 0, 0.103) 52.35%,
+    rgba(0, 0, 0, 0.112) 55.85%,
+    rgba(0, 0, 0, 0.126) 59.35%,
+    rgba(0, 0, 0, 0.144) 62.85%,
+    rgba(0, 0, 0, 0.165) 66.35%,
+    rgba(0, 0, 0, 0.188) 69.85%,
+    rgba(0, 0, 0, 0.213) 73.35%,
+    rgba(0, 0, 0, 0.237) 76.85%,
+    rgba(0, 0, 0, 0.262) 80.35%,
+    rgba(0, 0, 0, 0.285) 83.85%,
+    rgba(0, 0, 0, 0.306) 87.35%,
+    rgba(0, 0, 0, 0.324) 90.85%,
+    rgba(0, 0, 0, 0.338) 94.35%,
+    rgba(0, 0, 0, 0.347) 97.85%,
+    #00000059
+  ); */
+  background: linear-gradient(
+    180deg,
+    #0000001a 48.85%,
+    rgba(0, 0, 0, 0.103) 52.35%,
+    rgba(0, 0, 0, 0.112) 55.85%,
+    rgba(0, 0, 0, 0.126) 59.35%,
+    rgba(0, 0, 0, 0.144) 62.85%,
+    rgba(0, 0, 0, 0.165) 66.35%,
+    rgba(0, 0, 0, 0.188) 69.85%,
+    rgba(0, 0, 0, 0.213) 73.35%,
+    rgba(0, 0, 0, 0.237) 76.85%,
+    rgba(0, 0, 0, 0.262) 80.35%,
+    rgba(0, 0, 0, 0.285) 83.85%,
+    rgba(0, 0, 0, 0.306) 87.35%,
+    rgba(0, 0, 0, 0.324) 90.85%,
+    rgba(0, 0, 0, 0.338) 94.35%,
+    rgba(0, 0, 0, 0.347) 97.85%,
+    #00000059
+  );
+}
+
+.gallery-item .details {
+  @apply pt-2;
+}
+
+.details {
+  @apply relative;
+}
+
+.details > * {
+  @apply transition-all;
+}
+
+.details .author-details {
+  @apply opacity-0 absolute bottom-8 p-2 text-white;
+}
+
+.gallery-error {
+  @apply flex items-center justify-center min-h-[calc(100vh-12rem)] opacity-40;
+}

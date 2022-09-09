@@ -16,4 +16,13 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/main.css',
   ],
+
+  // https://v3.nuxtjs.org/guide/features/runtime-config#exposing-runtime-config
+  // Expose runtime config to the rest of the app
+  runtimeConfig: {
+    public: {
+      readToken: process.env.WEBINY_VIEW_TOKEN,
+      readAPIURL: "https://dfroq05ygtypu.cloudfront.net/cms/read/en-US"
+    }
+  }
 })
