@@ -1,3 +1,5 @@
+// ./server/api/getAllPhotos.js
+
 import { sendReq } from "~~/composables/sendReq";
 
 export default defineEventHandler(async (event) => {

@@ -76,14 +76,17 @@ body {
 }
 
 .gallery-item {
-  @apply transition-all inline-block bg-white p-2 mb-4 rounded-xl hover:shadow-xl hover:-translate-y-2 cursor-pointer;
+  @apply inline-block mb-4;
+}
+.photo {
+  @apply relative transition-all bg-white p-2 rounded-xl hover:shadow-xl hover:-translate-y-2 cursor-pointer;
 }
 
-.gallery-item .img-cont {
+.photo .img-cont {
   @apply relative transform transition rounded-lg overflow-hidden;
 }
 
-.gallery-item .backdrop {
+.photo .backdrop {
   @apply absolute bottom-0 left-0 w-full h-full transition opacity-0;
   /* background: linear-gradient(
     180deg,
@@ -139,7 +142,7 @@ body {
   );
 }
 
-.gallery-item .details {
+.photo .details {
   @apply pt-2;
 }
 
@@ -157,4 +160,17 @@ body {
 
 .gallery-error {
   @apply flex items-center justify-center min-h-[calc(100vh-12rem)] opacity-40;
+}
+
+/* PHOTO PAGE */
+.photo.full {
+  @apply bg-transparent hover:shadow-none hover:translate-y-0 max-w-5xl m-auto cursor-default;
+}
+
+.photo.full .author-details{
+  @apply mb-4;
+}
+
+.photo-caption {
+  @apply mt-4 text-xl;
 }

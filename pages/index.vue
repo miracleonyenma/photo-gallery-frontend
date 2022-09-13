@@ -1,5 +1,7 @@
+<!-- ./pages/index.vue -->
+
 <script setup>
-const { data } = await useFetch("/api/getAllPhotos")
+const { data } = await useFetch("/api/getAllPhotos");
 </script>
 <template>
   <main class="site-main photos-page">
@@ -12,23 +14,11 @@ const { data } = await useFetch("/api/getAllPhotos")
 
           <ul v-if="data && data?.listPhotos?.data" class="gallery">
             <li
-              v-for="(photo, i) in data.listPhotos.data"
-              :key="i"
-              class="group gallery-item"
+              v-for="photo in data.listPhotos.data"
+              :key="photo.id"
+              class="gallery-item"
             >
-              <div class="photo img-cont">
-                <img :src="photo.photo" alt="image" />
-                <div class="backdrop group-hover:opacity-100"></div>
-              </div>
-              <div class="details">
-                <div class="author-details group-hover:opacity-100">
-                  <h3 class=" text-lg"> {{photo.author.name}} </h3>
-                  <p> @{{ photo.author.username }} </p>
-                </div>
-                <p class="caption">
-                  {{ photo.caption }}
-                </p>
-              </div>
+              <ImgItem :photo="photo" />
             </li>
           </ul>
           <div v-else class="gallery-error">
