@@ -4,8 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: 'Clash Display', sans-serif;
+* {
+  font-family: "Clash Display", sans-serif;
 }
 
 body {
@@ -45,6 +45,16 @@ body {
 
 .site-main > .wrapper {
   @apply max-w-7xl m-auto;
+}
+
+.cta {
+  @apply font-medium text-slate-50 bg-slate-800 p-2 px-4 rounded-md;
+  @apply transition-all hover:-translate-y-1 hover:shadow-md active:translate-y-1 active:shadow-inner;
+  @apply disabled:transform-none disabled:shadow-none;
+}
+
+.cta.alt {
+  @apply bg-slate-100 text-slate-800;
 }
 
 /* // PAGES // */
@@ -155,7 +165,7 @@ body {
 }
 
 .details .author-details {
-  @apply opacity-0 absolute bottom-8 p-2 text-white;
+  @apply opacity-0 absolute -top-[4.25rem] p-2 text-white;
 }
 
 .gallery-error {
@@ -167,10 +177,84 @@ body {
   @apply bg-transparent hover:shadow-none hover:translate-y-0 max-w-5xl m-auto cursor-default;
 }
 
-.photo.full .author-details{
+.photo.full .author-details {
   @apply mb-4;
 }
 
 .photo-caption {
   @apply mt-4 text-xl;
+}
+
+/* NEW PAGE */
+.new.site-main .wrapper {
+  @apply max-w-4xl;
+}
+
+.upload-header {
+  @apply mb-4;
+}
+
+/* .upload-cont {
+  @apply ;
+} */
+
+#upload-form .wrapper {
+  @apply flex flex-col gap-4;
+}
+
+.file-preview {
+  @apply relative pb-4;
+}
+
+.file-preview img {
+  @apply rounded-lg;
+}
+
+.form-control {
+  @apply flex flex-col gap-1 grow;
+}
+
+.form-input {
+  @apply w-full rounded-lg bg-slate-50 outline-none border-none;
+  @apply transition-opacity disabled:opacity-50;
+}
+
+.form-group {
+  @apply flex gap-4 flex-wrap;
+}
+
+.form-section {
+  @apply flex flex-col gap-4 bg-white p-4 rounded-xl;
+}
+
+.action-cont.check-user {
+  @apply flex gap-4 shrink-0 self-end;
+}
+
+.check-user .cta.valid {
+  @apply bg-green-600 text-green-50;
+}
+
+.toast {
+  @apply fixed -bottom-full right-40 bg-white shadow-xl min-w-[24rem] rounded-lg;
+}
+
+.toast.active {
+  @apply bottom-20;
+}
+
+.toast.success {
+  @apply bg-green-600 text-green-50 shadow-green-600/40;
+}
+
+.toast.error {
+  @apply bg-red-600 text-red-50 shadow-red-600/40;
+}
+
+.toast .wrapper {
+  @apply flex gap-4 justify-between items-center p-4;
+}
+
+.toast .cta {
+  @apply p-2;
 }
