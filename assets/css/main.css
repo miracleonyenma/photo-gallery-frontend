@@ -19,6 +19,10 @@ body {
 
 /* SITE NAV */
 
+.site-nav {
+  @apply px-4
+}
+
 .site-nav .links {
   @apply flex gap-4;
 }

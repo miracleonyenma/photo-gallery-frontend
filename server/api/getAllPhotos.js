@@ -13,6 +13,7 @@ export default defineEventHandler(async (event) => {
       caption
       photo
       author{
+        id
         name
         username
       }

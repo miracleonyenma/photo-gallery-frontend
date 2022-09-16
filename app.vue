@@ -3,4 +3,5 @@
 <template>
   <SiteHeader />
   <NuxtPage />
+  <Toast />
 </template>

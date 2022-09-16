@@ -13,6 +13,9 @@
           <li class="link">
             <NuxtLink to="/">All photos</NuxtLink>
           </li>
+          <li class="link">
+            <NuxtLink to="/new">New</NuxtLink>
+          </li>
         </ul>
       </nav>
     </div>
