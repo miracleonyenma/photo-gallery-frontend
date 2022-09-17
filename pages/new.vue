@@ -1,5 +1,10 @@
 <!-- ./pages/new.vue -->
-
+<script setup>
+// add page meta
+useHead({
+  title: "Add new",
+});
+</script>
 <template>
   <main class="site-main new">
     <div class="wrapper">

@@ -1,6 +1,9 @@
 <!-- ./pages/index.vue -->
 
 <script setup>
+useHead({
+  title: "All photos",
+});
 const { data } = await useFetch("/api/getAllPhotos");
 </script>
 <template>

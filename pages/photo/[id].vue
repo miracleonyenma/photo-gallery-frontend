@@ -14,6 +14,10 @@ const { data: photo } = await useAsyncData(id, () => {
 });
 
 console.log({ photo });
+
+useHead({
+  title: photo?.value?.getPhoto?.data?.caption,
+});
 </script>
 <template>
   <main class="site-main">
